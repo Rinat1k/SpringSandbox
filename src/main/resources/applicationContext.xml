@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+    <!--Creating beans with annotation help-->
+    <context:component-scan base-package="com.springsandbox"/>
+
+</beans>
+
+
+
+<!--    <bean id="Pet" class="com.springsandbox.pets.Dog">-->
+<!--    </bean>-->
+
+<!--    <bean id="Keeper" class="com.springsandbox.keepers.PetKeeper">-->
+<!--        <constructor-arg ref="Pet"></constructor-arg> DI with constructor's help-->
+<!--        <property name="pet" ref="Pet"/> DI with setter's help-->
+<!--        <constructor-arg ref="Pet"/>-->
+<!--        <property name="surName" value="${keeper.surname}"/>-->
+<!--        <property name="age" value="${keeper.age}"/>-->
+<!--    </bean>-->

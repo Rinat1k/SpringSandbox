@@ -1,13 +1,21 @@
 package com.springsandbox;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.springsandbox.keepers.PetKeeper;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootApplication
 public class SpringSandboxApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringSandboxApplication.class, args);
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        var petKeeper1 = context.getBean("petKeeper", PetKeeper.class);
+        petKeeper1.setSurName("Messi");
+
+        var petKeeper2 = context.getBean("petKeeper", PetKeeper.class);
+        petKeeper2.setSurName("Ronaldo");
+
+        context.close();
     }
 
 }
