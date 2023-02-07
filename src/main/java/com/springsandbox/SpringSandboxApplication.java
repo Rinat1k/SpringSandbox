@@ -12,6 +12,7 @@ public class SpringSandboxApplication {
         var petKeeper1 = context.getBean("petKeeper", PetKeeper.class);
         petKeeper1.setSurName("Messi");
 
+
         var petKeeper2 = context.getBean("petKeeper", PetKeeper.class);
         petKeeper2.setSurName("Ronaldo");
 
